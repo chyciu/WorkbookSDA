@@ -16,14 +16,54 @@ public class Person {
         this.pesel = pesel;
     }
 
-    public void hasReachedRetirementAge (Person person) {
+    public static void hasReachedRetirementAge (Person person) {
 
         if (person.gender.equals(Gender.MALE) && person.age >= 65) {
-            System.out.println(person.name + " " + person.surname + " :wiek emerytalny jest osiagnięty.");
+            System.out.println(person.name + " " + person.surname + ": wiek emerytalny jest osiagnięty.");
         } else if (person.gender.equals(Gender.FEMALE) && person.age >= 60) {
-            System.out.println(person.name + " " + person.surname + " :wiek emerytalny jest osiagnięty.");
+            System.out.println(person.name + " " + person.surname + ": wiek emerytalny jest osiagnięty.");
         }else {
-            System.out.println(person.name + " " + person.surname + " :wiek emerytalny NIE jest osiągniety.");
+            System.out.println(person.name + " " + person.surname + ": wiek emerytalny NIE jest osiągniety.");
+        }
+
+    }
+
+    public static void ageDifference (Person person, Person personA) {
+
+        int ageDiff = person.age - personA.age;
+
+        if (ageDiff == 1) {
+            System.out.println("Różnica wieku pomiędzy: " + person.name + " " + person.surname+
+                    " " + "oraz " + personA.name + " " + personA.surname + " wynosi " + Math.abs(ageDiff) + " rok.");
+        } else if (ageDiff == 2 || ageDiff == 3 || ageDiff == 4) {
+            System.out.println("Różnica wieku pomiędzy: " + person.name + " " + person.surname+
+                    " " + "oraz " + personA.name + " " + personA.surname + " wynosi " + Math.abs(ageDiff) + " lata.");
+        } else {
+            System.out.println("Różnica wieku pomiędzy: " + person.name + " " + person.surname+
+                    " " + "oraz " + personA.name + " " + personA.surname + " wynosi " + Math.abs(ageDiff) + " lat.");
+        }
+    }
+
+    public static void howManyToRetire (Person person) {
+
+        int maleRetire = 65;
+        int femaleRetire = 60;
+        int howMany;
+
+        if (person.gender.equals(Gender.MALE)) {
+            howMany = maleRetire - person.age;
+                if (howMany > 0) {
+                    System.out.println(person.name + " " + person.surname + ": " + " do emerytury brakuje " + howMany + " lat.");
+                } else {
+                    System.out.println(person.name + " " + person.surname + ": " + " osoba osiągnęła już wiek emerytalny.");
+                }
+        } else if (person.gender.equals(Gender.FEMALE)) {
+            howMany = femaleRetire - person.age;
+            if (howMany > 0) {
+                System.out.println(person.name + " " + person.surname + ": " + " do emerytury brakuje " + howMany + " lat.");
+            } else {
+                System.out.println(person.name + " " + person.surname + ": " + " osoba osiągnęła już wiek emerytalny.");
+            }
         }
 
     }

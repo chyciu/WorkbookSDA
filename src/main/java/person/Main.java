@@ -13,15 +13,14 @@ public class Main {
         Person.hasReachedRetirementAge(person2);
         Person.hasReachedRetirementAge(person3);
 
-       Person.ageDifference(person1, person2);
-       Person.ageDifference(person2, person3);
-       Person.ageDifference(person2, person1);
-       Person.ageDifference(person4, person1);
+        Person.ageDifference(person1, person2);
+        Person.ageDifference(person2, person3);
+        Person.ageDifference(person2, person1);
+        Person.ageDifference(person4, person1);
 
         Person.howManyToRetire(person1);
         Person.howManyToRetire(person3);
         Person.howManyToRetire(person4);
 
     }
-
 }

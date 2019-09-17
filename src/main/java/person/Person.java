@@ -25,7 +25,6 @@ public class Person {
         }else {
             System.out.println(person.name + " " + person.surname + ": wiek emerytalny NIE jest osiągniety.");
         }
-
     }
 
     public static void ageDifference (Person person, Person personA) {
@@ -65,10 +64,7 @@ public class Person {
                 System.out.println(person.name + " " + person.surname + ": " + " osoba osiągnęła już wiek emerytalny.");
             }
         }
-
     }
-
-
 }
 
 
